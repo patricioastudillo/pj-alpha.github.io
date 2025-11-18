@@ -5,61 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pj Alpha</title>
   <style>
+    :root {
+      --teal: #19b6b0;
+      --teal-dark: #0f6f6a;
+    }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0d0d0d;
-      color: #ffffff;
+      font-family: "Inter", Arial, sans-serif;
+      background: radial-gradient(circle at top, #0e0e0e, #000000);
+      color: #e5e5e5;
       overflow-x: hidden;
     }
+
     header {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #000000 100%);
       text-align: center;
       padding: 0 20px;
     }
+
+    .logo {
+      width: 180px;
+      height: auto;
+      animation: float 5s ease-in-out infinite;
+      margin-bottom: 30px;
+      filter: drop-shadow(0px 0px 12px rgba(25,182,176,0.25));
+    }
+
     h1 {
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: -2px;
+      font-size: 3.8rem;
+      margin: 0;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease-out;
     }
-    h2 {
-      color: #999;
+
+    h2.subtitle {
+      color: #9fcfcd;
       font-weight: 300;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      margin-top: 12px;
+      animation: fadeIn 3s ease-out;
     }
+
     .section {
       max-width: 900px;
       margin: 0 auto;
-      padding: 80px 20px;
-      line-height: 1.6;
+      padding: 70px 20px;
+      line-height: 1.7;
     }
+
+    .section h2 {
+      color: var(--teal);
+      font-weight: 500;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
     .pill {
       display: inline-block;
-      padding: 8px 16px;
-      background: #222;
+      padding: 9px 18px;
+      background: rgba(25,182,176,0.1);
       border-radius: 30px;
-      font-size: 0.8rem;
-      margin: 4px;
-      border: 1px solid #333;
+      font-size: 0.85rem;
+      margin: 6px;
+      border: 1px solid rgba(25,182,176,0.3);
+      color: #c8f5f3;
+      backdrop-filter: blur(6px);
     }
+
     footer {
       padding: 40px;
       text-align: center;
-      color: #777;
+      color: #888;
       font-size: 0.9rem;
+    }
+
+    .coffee {
+      margin-top: 30px;
+    }
+
+    .coffee a {
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: var(--teal);
+      color: black;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(25,182,176,0.4);
+      transition: 0.25s;
+    }
+
+    .coffee a:hover {
+      background: var(--teal-dark);
+      box-shadow: 0 0 14px rgba(25,182,176,0.6);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/120x120?text=Pj+Alpha" alt="Pj Alpha Logo" style="border-radius:50%; margin-bottom:20px; animation: float 4s ease-in-out infinite;" />
-    <h1 style="animation: fadeIn 2s ease-out;">Pj Alpha</h1>
-    <h2 style="animation: fadeIn 3s ease-out;">AI · Cardiology · Patents · Financial Analysis</h2>
+    <img src="assets/logo.png" class="logo" alt="Pj Alpha Logo" />
+    <h1>Pj Alpha</h1>
+    <h2 class="subtitle">AI · Cardiology · Patents · Financial Analysis</h2>
+
+    <div class="coffee">
+      <a href="https://buymeacoffee.com/pjalpha" target="_blank">Buy me a coffee ☕</a>
+    </div>
   </header>
 
   <section class="section" id="about">
@@ -79,10 +146,9 @@
       <span class="pill">Cardiology</span>
       <span class="pill">Deep Learning</span>
       <span class="pill">Patent Creation</span>
-      <span class="pill">Freedom to Operate</span>
+      <span class="pill">FTO Analysis</span>
       <span class="pill">Financial Modeling</span>
       <span class="pill">Stock Market Prediction</span>
-      <span class="pill">FastAPI</span>
       <span class="pill">Python Engineering</span>
       <span class="pill">Web Apps</span>
       <span class="pill">Fun projects for my wife ♥</span>
@@ -93,25 +159,14 @@
     <h2>Vision</h2>
     <p>
       Pj Alpha builds tools and explorations that merge science, creativity, and technical power.
-      Whether analyzing cardiovascular data, generating IP strategy, studying financial signals, or crafting a personal
-      website for someone special, the mission is simple: <strong>create meaningful, elegant solutions</strong>.
+      Whether analyzing cardiovascular data, generating IP strategy, studying financial signals, or crafting
+      personal digital experiences, the mission is simple:
+      <strong>create meaningful, elegant solutions</strong>.
     </p>
   </section>
 
   <footer>
     © 2025 Pj Alpha
   </footer>
-
-  <style>
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
 </body>
 </html>
